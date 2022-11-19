@@ -1,0 +1,34 @@
+<onlyinclude><!--
+-->{{#switch: {{{1}}}
+| Vishnal
+| Clorica
+| Volkanon
+| Forte
+| Kiel
+| Bado
+| Margaret
+| Dylas
+| Arthur
+| Porcoline
+| Xiao Pai
+| Lin Fa
+| Amber
+| Illuminata
+| Doug
+| Blossom
+| Dolce
+| Jones
+| Nancy
+| Leon
+| Ventuswill
+| Lest
+| Frey
+| Noel
+| Luna = {{#ifeq:{{{placement|}}}|inline||<p>}}[[File:{{{1}}}_Icon.png|{{#if:{{{size|}}}|{{{size|}}}|32}}px|link=]] [[{{#if: {{{link|}}}|{{{link}}}|{{#switch: {{{1}}}|{{{1}}}}}}}]]{{#ifeq:{{{placement|}}}|inline||</p>}}
+| Barrett
+| Raven = {{#ifeq:{{{placement|}}}|inline||<p>}}[[File:{{{1}}} (RF4)_Icon.png|{{#if:{{{size|}}}|{{{size|}}}|32}}px|link=]] [[{{#if: {{{link|}}}|{{{link}}}|{{#switch: {{{1}}}|{{{1}}} (RF4){{!}}{{{1}}}z}}}}]]{{#ifeq:{{{placement|}}}|inline||</p>}}
+}}</onlyinclude><!--
+--><noinclude>
+<!-- Categories and interwikis go to the /doc subpage, not here! -->
+{{Documentation}}
+</noinclude>

@@ -1,0 +1,27 @@
+====Gifts====
+{{RF4Gift
+ |love=Porcoline
+ |like=Margaret,Blossom,Vishnal,Ventuswill
+ |dislike=Dolce}}
+
+{{RF4Gift
+ |love=Porcoline
+ |like=Ventuswill,Blossom
+ |like2=Arthur,Margaret
+ |dislike=Dolce,Vishnal}}
+
+ |neutral=Clorica,Volkanon,Forte,Kiel,Bado,Dylas,Xiao Pai,Lin Fa,Amber,Illuminata,Doug,Jones,Nancy,Leon,Noel,Luna,Raven,Barrett,Arthur
+
+{{RF4Gift
+ |like=Margaret,Amber}}
+
+ |neutral=Clorica,Volkanon,Forte,Kiel,Bado,Dylas,Xiao Pai,Lin Fa,Amber,Illuminata,Doug,Jones,Nancy,Leon,Noel,Luna,Raven,Barrett,Arthur,Porcoline,Ventuswill,Blossom,Dolce,Vishnal
+
+{{RF4Gift
+ |love=Porcoline,Ventuswill,Vishnal,Margaret
+ |like=Blossom
+ |dislike=Dolce}}
+
+update RF4 gift template and add more info
+
+update RF4 gift template and update love to like

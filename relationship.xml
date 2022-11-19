@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable>
+  <CheatEntries>
+    <CheatEntry>
+      <ID>1158</ID>
+      <Description>"Vishnal"</Description>
+      <LastState Value="210" RealAddress="034BF64C"/>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>4 Bytes</VariableType>
+      <Address>RF4D+2BFF0</Address>
+      <Offsets>
+        <Offset>C</Offset>
+        <Offset>8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>2635</ID>
+      <Description>"Clorica"</Description>
+      <LastState Value="307" RealAddress="034BF44C"/>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>4 Bytes</VariableType>
+      <Address>RF4D+2BFF0</Address>
+      <Offsets>
+        <Offset>0C</Offset>
+        <Offset>2*8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>2636</ID>
+      <Description>"Volkanon"</Description>
+      <LastState Value="241" RealAddress="034BF24C"/>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>4 Bytes</VariableType>
+      <Address>RF4D+2BFF0</Address>
+      <Offsets>
+        <Offset>0C</Offset>
+        <Offset>3*8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>2637</ID>
+      <Description>"Forte"</Description>
+      <LastState Value="213" RealAddress="034BF04C"/>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>4 Bytes</VariableType>
+      <Address>RF4D+2BFF0</Address>
+      <Offsets>
+        <Offset>0C</Offset>
+        <Offset>4*8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>2638</ID>
+      <Description>"Kiel"</Description>
+      <LastState Value="188" RealAddress="034BEE4C"/>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>4 Bytes</VariableType>
+      <Address>RF4D+2BFF0</Address>
+      <Offsets>
+        <Offset>0C</Offset>
+        <Offset>5*8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>2639</ID>
+      <Description>"Bado"</Description>
+      <LastState Value="168" RealAddress="034BEC4C"/>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>4 Bytes</VariableType>
+      <Address>RF4D+2BFF0</Address>
+      <Offsets>
+        <Offset>0C</Offset>
+        <Offset>6*8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>2640</ID>
+      <Description>"Margaret"</Description>
+      <LastState Value="250" RealAddress="034BEA4C"/>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>4 Bytes</VariableType>
+      <Address>RF4D+2BFF0</Address>
+      <Offsets>
+        <Offset>0C</Offset>
+        <Offset>7*8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>2641</ID>
+      <Description>"Dylas"</Description>
+      <LastState Value="184" RealAddress="034BE84C"/>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>4 Bytes</VariableType>
+      <Address>RF4D+2BFF0</Address>
+      <Offsets>
+        <Offset>0C</Offset>
+        <Offset>8*8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>2642</ID>
+      <Description>"Arthur"</Description>
+      <LastState Value="243" RealAddress="034BE64C"/>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>4 Bytes</VariableType>
+      <Address>RF4D+2BFF0</Address>
+      <Offsets>
+        <Offset>0C</Offset>
+        <Offset>9*8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>2643</ID>
+      <Description>"Porcoline"</Description>
+      <LastState Value="261" RealAddress="034BE44C"/>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>4 Bytes</VariableType>
+      <Address>RF4D+2BFF0</Address>
+      <Offsets>
+        <Offset>0C</Offset>
+        <Offset>A*8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>2644</ID>
+      <Description>"Xiao Pai"</Description>
+      <LastState Value="196" RealAddress="034BE24C"/>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>4 Bytes</VariableType>
+      <Address>RF4D+2BFF0</Address>
+      <Offsets>
+        <Offset>0C</Offset>
+        <Offset>B*8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>2645</ID>
+      <Description>"Lin Fa"</Description>
+      <LastState Value="238" RealAddress="034BE04C"/>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>4 Bytes</VariableType>
+      <Address>RF4D+2BFF0</Address>
+      <Offsets>
+        <Offset>0C</Offset>
+        <Offset>C*8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>2646</ID>
+      <Description>"Amber"</Description>
+      <LastState Value="274" RealAddress="034BDE4C"/>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>4 Bytes</VariableType>
+      <Address>RF4D+2BFF0</Address>
+      <Offsets>
+        <Offset>0C</Offset>
+        <Offset>D*8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>2647</ID>
+      <Description>"Illuminata"</Description>
+      <LastState Value="274" RealAddress="034BDC4C"/>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>4 Bytes</VariableType>
+      <Address>RF4D+2BFF0</Address>
+      <Offsets>
+        <Offset>0C</Offset>
+        <Offset>E*8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>2648</ID>
+      <Description>"Doug"</Description>
+      <LastState Value="233" RealAddress="034BDA4C"/>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>4 Bytes</VariableType>
+      <Address>RF4D+2BFF0</Address>
+      <Offsets>
+        <Offset>0C</Offset>
+        <Offset>F*8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>2649</ID>
+      <Description>"Blossom"</Description>
+      <LastState Value="270" RealAddress="034BD84C"/>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>4 Bytes</VariableType>
+      <Address>RF4D+2BFF0</Address>
+      <Offsets>
+        <Offset>0C</Offset>
+        <Offset>10*8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>2650</ID>
+      <Description>"Dolce"</Description>
+      <LastState Value="138" RealAddress="034BD64C"/>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>4 Bytes</VariableType>
+      <Address>RF4D+2BFF0</Address>
+      <Offsets>
+        <Offset>0C</Offset>
+        <Offset>11*8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>2651</ID>
+      <Description>"Jones"</Description>
+      <LastState Value="161" RealAddress="034BD44C"/>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>4 Bytes</VariableType>
+      <Address>RF4D+2BFF0</Address>
+      <Offsets>
+        <Offset>0C</Offset>
+        <Offset>12*8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>2652</ID>
+      <Description>"Nancy"</Description>
+      <LastState Value="196" RealAddress="034BD24C"/>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>4 Bytes</VariableType>
+      <Address>RF4D+2BFF0</Address>
+      <Offsets>
+        <Offset>0C</Offset>
+        <Offset>13*8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>2653</ID>
+      <Description>"Leon"</Description>
+      <LastState Value="103" RealAddress="034BD04C"/>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>4 Bytes</VariableType>
+      <Address>RF4D+2BFF0</Address>
+      <Offsets>
+        <Offset>0C</Offset>
+        <Offset>14*8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>2654</ID>
+      <Description>"Ventuswill"</Description>
+      <LastState Value="206" RealAddress="034BCE4C"/>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>4 Bytes</VariableType>
+      <Address>RF4D+2BFF0</Address>
+      <Offsets>
+        <Offset>0C</Offset>
+        <Offset>15*8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>2811</ID>
+      <Description>"Noel"</Description>
+      <LastState Value="1345" RealAddress="034BC64C"/>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>4 Bytes</VariableType>
+      <Address>RF4D+2BFF0</Address>
+      <Offsets>
+        <Offset>0C</Offset>
+        <Offset>16*8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>2812</ID>
+      <Description>"Luna"</Description>
+      <LastState Value="1345" RealAddress="034BBE4C"/>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>4 Bytes</VariableType>
+      <Address>RF4D+2BFF0</Address>
+      <Offsets>
+        <Offset>0C</Offset>
+        <Offset>17*8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>2830</ID>
+      <Description>"Barret (do not edit)"</Description>
+      <LastState Value="0" RealAddress="034B804C"/>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>4 Bytes</VariableType>
+      <Address>RF4D+2BFF0</Address>
+      <Offsets>
+        <Offset>0C</Offset>
+        <Offset>18*8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>2831</ID>
+      <Description>"Raven (do not edit)"</Description>
+      <LastState Value="0" RealAddress="034BFA4C"/>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>4 Bytes</VariableType>
+      <Address>RF4D+2BFF0</Address>
+      <Offsets>
+        <Offset>0C</Offset>
+        <Offset>19*8</Offset>
+      </Offsets>
+    </CheatEntry>
+  </CheatEntries>
+</CheatTable>
