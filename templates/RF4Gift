@@ -1,38 +1,43 @@
-<includeonly>{{#if:{{{love|{{{love2|{{{like|{{{like2|{{{neutral|{{{dislike|{{{dislike2|}}}}}}}}}}}}}}}}}}}}}|<!--
+<includeonly>{{#if:{{{love|{{{love2|{{{like3|{{{like|{{{like2|{{{neutral|{{{dislike|{{{dislike2|}}}}}}}}}}}}}}}}}}}}}}}}|<!--
 -->{{(}}{{!}} class="wikitable"
 {{#if:{{{love|}}}|<nowiki/>
 {{!}}- style="line-height: 2.5"
-{{!}} style="background:#7DC061; color: #252525" {{#if:{{{love2|}}}|rowspan="2"}} {{!}} '''Love'''
+{{!}} style="background:#7DC061; color: #232323" {{#if:{{{love2|}}}|rowspan="2"}} {{!}} '''Love'''
 {{!}} style="white-space: nowrap" {{!}} +15 FP
 {{!}} align="left" {{!}}{{#invoke:RF4Gift|print|{{{love|}}}|,|&#10240;•&#10240;}}
 }}{{#if:{{{love2|}}}|<nowiki/>
 {{!}}- style="line-height: 2.5"
-{{#if:{{{love|}}}||{{!}} style="background:#7DC061; color: #252525" {{!}} '''Love'''}} 
+{{#if:{{{love|}}}||{{!}} style="background:#7DC061; color: #232323" {{!}} '''Love'''}} 
 {{!}} style="white-space: nowrap" {{!}} +9 FP
 {{!}} align="left" {{!}}{{#invoke:RF4Gift|print|{{{love2|}}}|,|&#10240;•&#10240;}}
+}}{{#if:{{{like3|}}}|<nowiki/>
+{{!}}- style="line-height: 2.5"
+{{!}} style="background:#7DC061; color: #232323" {{#if:{{{like|}}}|{{#if:{{{like2|}}}|rowspan="3"|rowspan="2"}}|{{#if:{{{like2|}}}|rowspan="2"}}}} {{!}} '''Like'''
+{{!}} style="white-space: nowrap" {{!}} +15 FP
+{{!}} align="left" {{!}}{{#invoke:RF4Gift|print|{{{like3|}}}|,|&#10240;•&#10240;}}
 }}{{#if:{{{like|}}}|<nowiki/>
 {{!}}- style="line-height: 2.5"
-{{!}} style="background:#7DC061; color: #252525" {{#if:{{{like2|}}}|rowspan="2"}} {{!}} '''Like'''
+{{#if:{{{like3|}}}||{{!}} style="background:#7DC061; color: #232323" {{#if:{{{like2|}}}|rowspan="2"}} {{!}} '''Like'''}} 
 {{!}} style="white-space: nowrap" {{!}} +9 FP
 {{!}} align="left" {{!}}{{#invoke:RF4Gift|print|{{{like|}}}|,|&#10240;•&#10240;}}
 }}{{#if:{{{like2|}}}|<nowiki/>
 {{!}}- style="line-height: 2.5"
-{{#if:{{{like|}}}||{{!}} style="background:#7DC061; color: #252525" {{!}} '''Like'''}} 
+{{#if:{{{like3|{{{like|}}}}}}||{{!}} style="background:#7DC061; color: #232323" {{!}} '''Like'''}} 
 {{!}} style="white-space: nowrap" {{!}} +6 FP
 {{!}} align="left" {{!}}{{#invoke:RF4Gift|print|{{{like2|}}}|,|&#10240;•&#10240;}}
 }}{{#if:{{{neutral|}}}|<nowiki/>
 {{!}}- style="line-height: 2.5"
-{{!}} style="background:#7DC061; color: #252525" {{!}} '''Neutral'''
+{{!}} style="background:#7DC061; color: #232323" {{!}} '''Neutral'''
 {{!}} style="white-space: nowrap" {{!}} +5 FP
 {{!}} align="left" {{!}}{{#invoke:RF4Gift|print|{{{neutral|}}}|,|&#10240;•&#10240;}}
 }}{{#if:{{{dislike|}}}|<nowiki/>
 {{!}}- style="line-height: 2.5"
-{{!}} style="background:#7DC061; color: #252525" {{#if:{{{dislike2|}}}|rowspan="2"}} {{!}} '''Dislike'''
+{{!}} style="background:#7DC061; color: #232323" {{#if:{{{dislike2|}}}|rowspan="2"}} {{!}} '''Dislike'''
 {{!}} style="white-space: nowrap" {{!}} -5 FP
 {{!}} align="left" {{!}}{{#invoke:RF4Gift|print|{{{dislike|}}}|,|&#10240;•&#10240;}}
 }}{{#if:{{{dislike2|}}}|<nowiki/>
 {{!}}- style="line-height: 2.5"
-{{#if:{{{dislike|}}}||{{!}} style="background:#7DC061; color: #252525" {{!}} '''Dislike'''}} 
+{{#if:{{{dislike|}}}||{{!}} style="background:#7DC061; color: #232323" {{!}} '''Dislike'''}} 
 {{!}} style="white-space: nowrap" {{!}} -10 FP
 {{!}} align="left" {{!}}{{#invoke:RF4Gift|print|{{{dislike2|}}}|,|&#10240;•&#10240;}}
 }}
