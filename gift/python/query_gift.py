@@ -234,6 +234,6 @@ def query(name: str) -> str:
 
 
 if __name__ == '__main__':
-    wiki_string = query("heaven asunder")
+    wiki_string = query("magnifying glass")
     print(wiki_string)
     xerox.copy(wiki_string)
