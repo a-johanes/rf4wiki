@@ -31,7 +31,7 @@ def process_row(row: pd.Series, column_filter: str = None, column_filter_exclude
 
     # Iterate over the columns of the row
     for column_name, value in row.items():
-        if column_name == 'Diff':
+        if column_name in 'Diff' or 'Unnamed' in column_name:
             continue
 
         if not column_filter is None:
@@ -42,12 +42,27 @@ def process_row(row: pd.Series, column_filter: str = None, column_filter_exclude
                 if not column_filter in column_name:
                     continue
 
+        is_percent = False
+        if "%" in column_name:
+            column_name = column_name.replace('%','').strip()
+            is_percent = True
+
+        effects = ''
         # Check if the value is numeric (int or float)
-        if isinstance(value, (np.int64, np.float64)) and not np.isnan(value):  # Also handle NaN values
+        if isinstance(value, (np.int64, np.float64)):
+            if value == 0:
+                continue
+
+            sign = ''
             if value > 0:
-                result_list.append(f"{column_name} +{value}")
-            elif value < 0:
-                result_list.append(f"{column_name} {value}")
+                sign = '+'
+            if is_percent:
+                value = '{0:.2f}%'.format(value*100)
+
+            effects = f"{column_name} {sign}{value}"
+
+        if effects:
+            result_list.append(effects)
 
     # Join the list into a string, separated by new lines
     result_string = "<br/>".join(result_list)
@@ -74,14 +89,13 @@ def query(name: str) -> str:
     rarity = item_value['Rarity']
     difficulty = upgrade_value['Diff']
 
-    result_string = '{{{{RF4Vegetable\n|image name ={}_high\n|inbound =<!--empty means false-->\n|desc ={}\n|category =Vegetable\n|sell ={}\n|buy ={}\n|rarity ={}\n|effects ={}\n|difficulty ={}\n|upgrade ={}\n}}}}'.format(
-        to_snake_case(name), item_desc, sell_price, buy_price, rarity, item_use_formated, difficulty,
-        upgrade_value_formated)
+    result_string = '{{{{RF4Vegetable\n|image name ={}_high\n|inbound =<!--empty means false-->\n|desc ={}\n|category =Vegetable\n|sell ={}\n|buy ={}\n|rarity ={}\n|effects ={}\n|cook ={}\n|difficulty ={}\n|upgrade ={}\n}}}}'.format(
+        to_snake_case(name), item_desc, sell_price, buy_price, rarity, item_use_formated, cook_value_formated, difficulty, upgrade_value_formated)
 
     return result_string
 
 
 if __name__ == '__main__':
-    wiki_string = query("pink turnip")
+    wiki_string = query("Mealy Apple")
     print(wiki_string)
     xerox.copy(wiki_string)
