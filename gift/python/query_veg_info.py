@@ -57,7 +57,7 @@ def process_row(row: pd.Series, column_filter: str = None, column_filter_exclude
             if value > 0:
                 sign = '+'
             if is_percent:
-                value = '{0:.2f}%'.format(value*100)
+                value = '{0:.2f}'.format(value*100).rstrip('0').rstrip('.') + '%'
 
             effects = f"{column_name} {sign}{value}"
 
@@ -96,6 +96,6 @@ def query(name: str) -> str:
 
 
 if __name__ == '__main__':
-    wiki_string = query("Mealy Apple")
+    wiki_string = query("ultra onion")
     print(wiki_string)
     xerox.copy(wiki_string)
