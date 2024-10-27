@@ -1,0 +1,16 @@
+{
+    "configurations": [
+        {
+            "name": "query_gift",
+            "type": "python",
+            "workingDir": "$PROJECT_DIR$/gift/python/",
+            "file": "$PROJECT_DIR$/gift/python/query_gift.py"
+        },
+        {
+            "name": "query_info",
+            "type": "python",
+            "workingDir": "$PROJECT_DIR$/gift/python/",
+            "file": "$PROJECT_DIR$/gift/python/query_info.py"
+        }
+    ]
+}
