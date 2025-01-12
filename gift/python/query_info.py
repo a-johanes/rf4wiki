@@ -100,7 +100,7 @@ def build_rf4_info_template(name, item_desc="", sell_price="", buy_price="",
       # Add each field if it has a value
       for field, value in optional_fields.items():
           # Special handling for required fields or fields with special values
-          if field in ["inbound", "category"] or value:
+          if field in ["inbound", "category"] or (value is not None and value != ""):
               template_parts.append(f"|{field} ={value}")
 
       # Close the template
