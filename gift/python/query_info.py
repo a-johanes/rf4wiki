@@ -2,10 +2,11 @@ import pandas as pd
 import xerox
 import numpy as np
 import re
+import yaml
 
 from status_parser import parse_status_hex
 
-excel_file = pd.ExcelFile('../xlsx/data.xlsx')
+excel_file = pd.ExcelFile('gift/xlsx/data.xlsx')
 
 item_value_df = excel_file.parse('Item Values', header=1, index_col=0)
 item_value_df.index = item_value_df.index.str.lower()
@@ -16,7 +17,7 @@ upgrade_value_df.index = upgrade_value_df.index.str.lower()
 item_use_value_df = excel_file.parse('Item Use Values', header=1, index_col=0)
 item_use_value_df.index = item_use_value_df.index.str.lower()
 
-item_desc_df = pd.read_csv('../xlsx/item_desc.csv', index_col=0)
+item_desc_df = pd.read_csv('gift/xlsx/item_desc.csv', index_col=0)
 item_desc_df.index = item_desc_df.index.str.lower()
 
 
@@ -71,7 +72,7 @@ def process_row(row: pd.Series, column_filter: str = None, column_filter_exclude
 
     return result_string
 
-def build_rf4_info_template(name, item_desc="", sell_price="", buy_price="",
+def build_rf4_info_template(name, item_desc="", category="", sell_price="", buy_price="",
                                  rarity="", item_use_formated="", cook_value_formated="",
                                  difficulty="", upgrade_value_formated=""):
       """
@@ -87,7 +88,7 @@ def build_rf4_info_template(name, item_desc="", sell_price="", buy_price="",
       optional_fields = {
           "inbound": "<!--empty means false-->",  # Special case that's always included
           "desc": item_desc,
-          "category": "Vegetable",  # Required field
+          "category": category,
           "sell": sell_price,
           "buy": buy_price,
           "rarity": rarity,
@@ -150,9 +151,15 @@ def query(name: str) -> str:
          else:
             cook_value_formated = cook_status_effect
 
+    with open('gift/python/category.yaml', 'r') as f:
+        category_map = yaml.safe_load(f)['category']
+        item_category_id = item_value['Category']
+        item_category = category_map[item_category_id]
+
     return build_rf4_info_template(
         name=name,
         item_desc=item_desc,
+        category=item_category,
         sell_price=sell_price,
         buy_price=buy_price,
         rarity=rarity,
@@ -163,6 +170,6 @@ def query(name: str) -> str:
     )
 
 if __name__ == '__main__':
-    wiki_string = query("Leveliser")
+    wiki_string = query("formula B")
     print(wiki_string)
     xerox.copy(wiki_string)
