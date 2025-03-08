@@ -127,7 +127,7 @@ def query(name: str) -> str:
     cook_value_formated = process_row(upgrade_value, "cook")
     cook_value_formated = cook_value_formated.replace(" cook", "")
 
-    item_use_formated = ""
+    item_use_formated = "INEDIBLE"
     if item_use_value is not None:
         item_use_formated = process_row(item_use_value)
         eat_status_effect = parse_status_hex(item_use_value["Status Flags"])
