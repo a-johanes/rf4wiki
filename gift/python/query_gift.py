@@ -183,7 +183,7 @@ monster_item_list = [
 ]
 monster_item_list = [x.lower() for x in monster_item_list]
 
-gift_df = pd.read_excel('../xlsx/newdata.xlsx', sheet_name='gift')
+gift_df = pd.read_excel('gift/xlsx/newdata.xlsx', sheet_name='gift')
 
 
 def query(name: str) -> str:
