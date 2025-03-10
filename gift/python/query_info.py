@@ -129,15 +129,15 @@ def query(name: str) -> str:
 
     item_use_formated = "INEDIBLE"
     if item_use_value is not None:
-        item_use_formated = process_row(item_use_value)
+        item_use_value_processed = process_row(item_use_value)
         eat_status_effect = parse_status_hex(item_use_value["Status Flags"])
 
-        if eat_status_effect:
-            if item_use_formated:
-                item_use_formated = f"{eat_status_effect}<br/>{item_use_formated}"
-            else:
-                item_use_formated = eat_status_effect
+        item_use_formated_list = [eat_status_effect,item_use_value_processed]
+        item_use_formated = "<br/>".join(filter(None, item_use_formated_list))
 
+        if not item_use_formated:
+            item_use_formated = "NO EFFECT"
+        
     sell_price = int(item_value['Sell'])
     buy_price = int(item_value['Buy'])
     rarity = item_value['Rarity']
