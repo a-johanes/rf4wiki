@@ -80,7 +80,7 @@ def build_rf4_info_template(name, item_desc="", category="", sell_price="", buy_
       """
       # Start with the required fields
       template_parts = [
-          "{{RF4Vegetable",
+          "{{RF4ItemInfobox",
           f"|image name ={to_snake_case(name)}_high"
       ]
 
