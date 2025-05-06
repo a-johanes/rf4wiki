@@ -20,6 +20,9 @@ item_use_value_df.index = item_use_value_df.index.str.lower()
 item_desc_df = pd.read_csv('gift/xlsx/item_desc.csv', index_col=0)
 item_desc_df.index = item_desc_df.index.str.lower()
 
+crop_values_df = excel_file.parse('Crop Values', header=1, index_col=0)
+crop_values_df.index = crop_values_df.index.str.strip().str.lower()
+
 
 def to_snake_case(s: str) -> str:
     # Replace spaces and special characters with underscores
@@ -27,6 +30,20 @@ def to_snake_case(s: str) -> str:
     s = re.sub(r'[^a-zA-Z0-9_]', '', s)  # Remove non-alphanumeric characters (except underscores)
     s = re.sub(r'[_]+', '_', s)  # Replace multiple underscores with a single underscore
     return s.lower()  # Convert to lowercase
+
+def to_title_case(s: str) -> str:
+    # Replace spaces and special characters with underscores
+    s = re.sub(r'[^a-zA-Z0-9_\s]', '', s)  # Remove non-alphanumeric characters (except underscores)
+    s = re.sub(r'[_]+', '_', s)  # Replace multiple underscores with a single underscore
+
+    # Split the string into words
+    words = s.split(' ')
+
+    # Capitalize the first letter of each word
+    words = [word.capitalize() for word in words]
+
+    # Join the words together
+    return ' '.join(words)
 
 
 def process_row(row: pd.Series, column_filter: str = None, column_filter_exclude: bool = False) -> str:
@@ -74,44 +91,63 @@ def process_row(row: pd.Series, column_filter: str = None, column_filter_exclude
 
 def build_rf4_info_template(name, item_desc="", category="", sell_price="", buy_price="",
                                  rarity="", item_use_formated="", cook_value_formated="",
-                                 difficulty="", upgrade_value_formated=""):
-      """
-      Builds RF4 vegetable template string, only including fields with values.
-      """
-      # Start with the required fields
-      template_parts = [
-          "{{RF4ItemInfobox",
-          f"|image name ={to_snake_case(name)}_high"
-      ]
+                                difficulty="", upgrade_value_formated="", growth="", 
+                                regrowth="", harvested="",crops_value_price="", produce=""):
+    """
+    Builds RF4 vegetable template string, only including fields with values.
+    """
 
-      # Dictionary of optional fields and their values
-      optional_fields = {
-          "inbound": "<!--empty means false-->",  # Special case that's always included
-          "desc": item_desc,
-          "category": category,
-          "sell": sell_price,
-          "buy": buy_price,
-          "rarity": rarity,
-          "effects": item_use_formated,
-          "cook": cook_value_formated,
-          "difficulty": difficulty,
-          "upgrade": upgrade_value_formated
-      }
+    template = "RF4ItemInfobox"
+    if "seeds" in name or "sds" in name:
+        template = "RF4SeedInfobox"
 
-      # Add each field if it has a value
-      for field, value in optional_fields.items():
-          # Special handling for required fields or fields with special values
-          if field in ["inbound", "category"] or (value is not None and value != ""):
-              template_parts.append(f"|{field} ={value}")
+    # Start with the required fields
+    template_parts = [
+        f"{{{{{template}",
+        f"|image name ={to_snake_case(name)}_high"
+    ]
 
-      # Close the template
-      template_parts.append("}}")
+    # Dictionary of optional fields and their values
+    optional_fields = {
+        "inbound": "<!--empty means false-->",  # Special case that's always included
+        "desc": item_desc,
+        "category": category,
+        "sell": sell_price,
+        "buy": buy_price,
+        "rarity": rarity,
+        "effects": item_use_formated,
+        "cook": cook_value_formated,
+        "difficulty": difficulty,
+        "upgrade": upgrade_value_formated
+    }
 
-      # Join all parts with newlines
-      return '\n'.join(template_parts)
+    if "seeds" or "sds" in name:
+        optional_fields.update({
+            "name": to_title_case(name),
+            "crop": to_title_case(produce),
+            "crop sell price": crops_value_price,
+            "growth": growth,
+            "harvested": harvested,
+        })
 
-def query(name: str) -> str:
+        if regrowth:
+            optional_fields["regrowth"] = regrowth
+
+    # Add each field if it has a value
+    for field, value in optional_fields.items():
+        # Special handling for required fields or fields with special values
+        if field in ["inbound", "category"] or (value is not None and value != ""):
+            template_parts.append(f"|{field} ={value}")
+
+    # Close the template
+    template_parts.append("}}")
+
+    # Join all parts with newlines
+    return '\n'.join(template_parts)
+
+def query(name: str, seed_produce: str="") -> str:
     name = name.lower()
+    seed_produce = seed_produce.lower()
 
     item_value = item_value_df.loc[name]
     upgrade_value = upgrade_value_df.loc[name]
@@ -156,6 +192,25 @@ def query(name: str) -> str:
         item_category_id = item_value['Category']
         item_category = category_map[item_category_id]
 
+    growth = 0
+    regrowth = 0
+    harvested = 0
+    crops_value_price = 0
+    if seed_produce:
+        crop_values = crop_values_df.loc[seed_produce]
+        growth += int(crop_values['Stage 1 Days'])
+        growth += int(crop_values['Stage 2 Days'])
+        growth += int(crop_values['Stage 3 Days'])
+        growth += int(crop_values['Stage 4 Days'])
+        regrowth = int(crop_values['Regrowth Days'])
+        harvested = int(crop_values['Quantity'])
+        # sell = item_value_df.loc[seed_produce]['Sell']
+        # if type(sell) != np.float64:
+        #     sell = sell.sort_values(ascending=False)
+        #     sell = sell.iloc[0]
+        # crops_value_price = int(sell)
+        crops_value_price = 0
+
     return build_rf4_info_template(
         name=name,
         item_desc=item_desc,
@@ -166,10 +221,16 @@ def query(name: str) -> str:
         item_use_formated=item_use_formated,
         cook_value_formated=cook_value_formated,
         difficulty=difficulty,
-        upgrade_value_formated=upgrade_value_formated
+        upgrade_value_formated=upgrade_value_formated,
+        growth=growth,
+        regrowth=regrowth,
+        harvested=harvested,
+        produce=seed_produce,
+        crops_value_price=crops_value_price
     )
 
 if __name__ == '__main__':
-    wiki_string = query("formula B")
+    wiki_string = query("failed dish")
     print(wiki_string)
     xerox.copy(wiki_string)
+    
